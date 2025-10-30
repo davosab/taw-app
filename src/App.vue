@@ -4,6 +4,7 @@
   const link = ref("https:/emanuel.ro");
   const number = ref(null);
   const counter = ref(0);
+  const grades = ref([7, 8, 5, 10, 9]);
 
   import {ref, onMounted, onUpdated} from "vue";
   onMounted(() => {
@@ -57,6 +58,17 @@
 
   <button @click="increment">Click to increment: {{ counter }}</button>
 
+<h3>Bootstrap-icon <i class="bi bi-airplane"></i></h3>
+<br><br>
+<h3>Test v-for</h3>
+<ul>
+  <li v-for="(grade, index) of grades" :key="index">Grade: {{ grade }}</li>
+</ul>
+<button @click="grades[0] = 10">Change first grade</button>
+
 </template>
 
-<style scoped></style>
+<style scoped>
+/* @import "tailwindcss"; */
+@import "bootstrap-icons";
+</style>
