@@ -7,6 +7,8 @@
   const grades = ref([7, 8, 5, 10, 9]);
 
   import {ref, onMounted, onUpdated} from "vue";
+  import Card from "./components/Card.vue";
+
   onMounted(() => {
     console.log("onMounted()");
   });
@@ -62,13 +64,26 @@
 <br><br>
 <h3>Test v-for</h3>
 <ul>
-  <li v-for="(grade, index) of grades" :key="index">Grade: {{ grade }}</li>
+  <li v-for="(grade, index) of grades" :key="index">
+    Grade: {{ grade }}
+  </li>
 </ul>
 <button @click="grades[0] = 10">Change first grade</button>
+<br><br>
+
+<div class="card-wrapper">
+  <Card/>
+  <Card/>
+</div>
 
 </template>
 
 <style scoped>
 /* @import "tailwindcss"; */
 @import "bootstrap-icons";
+
+.card-wrapper {
+  display: flex;
+  gap: 2rem;
+}
 </style>
