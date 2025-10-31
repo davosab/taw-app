@@ -4,10 +4,11 @@
   const link = ref("https:/emanuel.ro");
   const number = ref(null);
   const counter = ref(0);
-  const grades = ref([7, 8, 5, 10, 9]);
+  const showCards = ref(false);
 
   import {ref, onMounted, onUpdated} from "vue";
   import Card from "./components/Card.vue";
+  import StudentGrades from "./components/StudentGrades.vue";
 
   onMounted(() => {
     console.log("onMounted()");
@@ -61,19 +62,15 @@
   <button @click="increment">Click to increment: {{ counter }}</button>
 
 <h3>Bootstrap-icon <i class="bi bi-airplane"></i></h3>
-<br><br>
-<h3>Test v-for</h3>
-<ul>
-  <li v-for="(grade, index) of grades" :key="index">
-    Grade: {{ grade }}
-  </li>
-</ul>
-<button @click="grades[0] = 10">Change first grade</button>
+<StudentGrades />
 <br><br>
 
-<div class="card-wrapper">
-  <Card/>
-  <Card/>
+<label for="cards">Show cards</label>
+<input type="checkbox" id="cards" v-model="showCards">
+<br><br>
+<div v-if="showCards" class="card-wrapper">
+  <Card id="1"/>
+  <Card :id="3-1"/>
 </div>
 
 </template>

@@ -1,11 +1,15 @@
 <script setup>
+import {ref} from "vue";
 const seeMore = () => alert("See more!");
+const props = defineProps(["id"]);
+const value = ref(props.id);
+console.log(value);
 </script>
 
 <template>
 <div class="card">
   <div class="image"></div>
-  <h2>Card title</h2>
+  <h2>Card title {{ id }}</h2>
   <p>Card description.</p>
   <button @click="seeMore">See more</button>
 </div>
