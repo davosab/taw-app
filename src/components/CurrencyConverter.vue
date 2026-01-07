@@ -22,7 +22,17 @@ const computeRONToEUR = (value) => {
 
 <template>
   <h3>Currency Converter</h3>
-  <InputCurrency :value="currencyEUR" @changeValue="computeEURToRON" />
-  <input type="number" v-model="cursEURRON" @input="recalculateCurrency" />
-  <InputCurrency :value="currencyRON" @changeValue="computeRONToEUR" />
+  <InputCurrency
+    :value="currencyEUR"
+    @change-value="computeEURToRON"
+  />
+  <input
+    v-model="cursEURRON"
+    type="number"
+    @input="recalculateCurrency"
+  >
+  <InputCurrency
+    :value="currencyRON"
+    @change-value="computeRONToEUR"
+  />
 </template>

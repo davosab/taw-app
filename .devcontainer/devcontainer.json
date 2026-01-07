@@ -9,7 +9,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "Vue.volar"
+        "Vue.volar",
+        "dbaeumer.vscode-eslint"
       ],
       "settings": {
         "editor.formatOnSave": true,

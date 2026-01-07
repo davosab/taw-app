@@ -5,5 +5,8 @@ const target = ref("_blank")
 </script>
 
 <template>
-<a :href="link" :target="target">Visit Emanuel website</a>
+  <a
+    :href="link"
+    :target="target"
+  >Visit Emanuel website</a>
 </template>

@@ -25,21 +25,27 @@ const showIcons = ref(false)
 <template>
   <YouDidIt />
   <hr>
-  <RouterLink to="/flowers">Flowers</RouterLink>
+  <RouterLink to="/flowers">
+    Flowers
+  </RouterLink>
   <hr>
   <BindLink />
   <hr>
   <RandomNumber />
   <hr>
-  <CountYourBlessings startCount="7" />
-  <CountYourBlessings :startCount="3+5" />
-  <CountYourBlessings startCount="9" />
+  <CountYourBlessings start-count="7" />
+  <CountYourBlessings :start-count="3+5" />
+  <CountYourBlessings start-count="9" />
   <hr>
-  <input type="checkbox" v-model="showIcons"> Show Bootstrap Icons
+  <input
+    v-model="showIcons"
+    type="checkbox"
+  > Show Bootstrap Icons
   <div v-if="showIcons">
     <HeaderWithIcon 
       v-for="(header, index) of [1,2,3]" 
-      :key="index" />
+      :key="index"
+    />
     <HeaderWithIcon />
   </div>
   <hr>
